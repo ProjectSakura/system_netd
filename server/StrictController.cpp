@@ -232,5 +232,5 @@ int StrictController::setDNSCleartextWhitelist(const std::vector<std::string>& s
     }
     commands.push_back("COMMIT\n");
 
-    return (execIptablesRestore(V4, Join(commands, "\n")) == 0) ? 0 : -EREMOTEIO;
+    return (execIptablesRestore(V4V6, Join(commands, "\n")) == 0) ? 0 : -EREMOTEIO;
 }
